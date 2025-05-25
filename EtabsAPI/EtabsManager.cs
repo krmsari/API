@@ -1,4 +1,4 @@
-﻿using EtabsAPI.UI.Menu.Models;
+﻿using System.Windows.Forms;
 using ETABSv1;
 
 namespace EtabsAPI
@@ -16,6 +16,12 @@ namespace EtabsAPI
             sapModel = cAPI.SapModel;
             cAPI.ApplicationStart();
             sapModel.InitializeNewModel(eUnits.N_mm_C);
+            if (sapModel == null)
+            {
+                MessageBox.Show("ETABS başlatılamadı veya SapModel null döndü.");
+                return;
+            }
+
         }
 
         public void InitializeMaterials(string concreteType, string rebarType)
@@ -28,15 +34,14 @@ namespace EtabsAPI
         public void setGridSystem(double[] storyElevations)
         {
             
-
             sapModel.File.NewGridOnly(
                 storyElevations.Length - 1, // 3 floors
-                3, // Story height 
-                3, // First story height 
+                3.0, // Story height 
+                3.0, // First story height 
                 3, // 3 grid lines in X direction
                 3, // 3 grid lines in Y direction
-                3,
-                3  
+                3.0, // Distance of Y direction intervals
+                3.0  // Distance of X direction intervals
             );
             // As far as I understand and could research, this is the way the grid system is allowed to be defined with the ETABS API.
             

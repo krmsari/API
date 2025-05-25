@@ -65,20 +65,7 @@
     <Compile Include="ui\CustomTools\CLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ui\CustomTools\CNumberBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ui\CustomTools\CPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ui\CustomTools\CTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ui\CustomTools\CustomGridTable.cs" />
     <Compile Include="ui\CustomTools\Interfaces\IComboBox.cs" />
-    <Compile Include="ui\Menu\Models\ConcreteGrade.cs" />
-    <Compile Include="ui\Menu\Models\MenuItemModel.cs" />
-    <Compile Include="ui\Menu\Models\RebarGrade.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -22,12 +22,13 @@ namespace EtabsAPI
         {
             string selectedConcrete = concreteStatBox.SelectedItem?.ToString();
             string selectedRebar = rebarStatBox.SelectedItem?.ToString();
-            double[] storyElevations = { 0, 3000, 5700, 8400 };
-            etabsManager.setGridSystem(storyElevations);
+
+            double[] storyElevations = { 0, 3000, 6000, 9000 };
 
             etabsManager.InitializeEtabsApi();
             etabsManager.InitializeMaterials(selectedConcrete, selectedRebar);
-
+            etabsManager.setGridSystem(storyElevations);
         }
+
     }
 }
